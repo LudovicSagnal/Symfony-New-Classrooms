@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+{# {% extends 'cours_admin/index.html.twig' %} #}
+
+{% block title %}User index{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/crud.css') }}"/>
+{% endblock %}
+
+{% block body %}
+{% include "adrar/_navbar.html.twig" %}
+    <h1>Utilisateur index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Mot de passe</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.image }}</td>
+                <td>
+                    <a href="{{ path('app_admin_show', {'id': user.id}) }}">voir</a>
+                    <a href="{{ path('app_admin_edit', {'id': user.id}) }}">modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Aucun résultat</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_new') }}">Créer un nouvel utilisateur</a>
+    {# {% include "cours_admin/index.html.twig" %} #}
+    {# {% include "adrar/_footer.html.twig" %} #}
+{% endblock %}

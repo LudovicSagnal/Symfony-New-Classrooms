@@ -1,0 +1,130 @@
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/**********************  Section haute *********************/
+
+.div-top {
+    display: flex;
+    flex-direction: row;
+    background-color: #5584AC;
+    color: white;
+    height: 400px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.top-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.top-left h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: -20px;
+}
+
+.top-left p {
+    width: 65%;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+
+.top-button button {
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px rgb(66, 65, 65);
+}
+
+.top-ellipse {
+    position: absolute;
+    right: 200px;
+    bottom: -20px;
+}
+
+.but1 {
+    background-color: white;
+    color: #5584AC;
+    margin-right: 20px;
+}
+
+.but2 {
+    background-color: #5584AC;
+    color: white;
+    border: 1px solid white;
+}
+
+/**********************  Section moyenne *********************/
+
+.div-middle {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    color: white;
+    height: 400px;
+    width: 100%;
+}
+
+.div-middle img {
+    margin-top: 20px;
+    height: 220px;
+}
+
+.div-ellipse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-ellipse p {
+    font-size: 20px;
+    width: 80%;
+    text-align: center;
+    margin-top: 0;
+}
+
+.div-ellipse h3 {
+    font-size: 25px;
+    margin-bottom: 5px;
+    font-weight: 800;
+}
+
+/**********************  Section basse *********************/
+
+.div-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #5584AC;
+    color: white;
+    height: 450px;
+    width: 100%;
+}
+
+.div-end h3 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.div-end p {
+    margin-top: -10px;
+    font-size: 20px;
+}
+
+.view-avatar {
+    height: 200px;
+}
+
+.arrows {
+    height: 40px;
+    margin: 0px 20px 0px 20px;
+}
+

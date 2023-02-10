@@ -1,0 +1,30 @@
+section {
+    display: flex;
+    background-color: black;
+    height: 300px;
+    margin: 10px 0px 10px 0px;
+}
+
+.card-left {
+    height: 280px;
+    width: 30%;
+    background-color: green;
+    margin: 10px;
+}
+
+.card-right {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    color: white;
+    margin-left: 10px;
+}
+
+.level {
+    display: flex;
+    gap: 15px;
+}
+
+h4 {
+    color: #5584AC;
+}

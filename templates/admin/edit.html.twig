@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/crud.css') }}"/>
+{% endblock %}
+
+
+{% block body %}
+{% include "adrar/_navbar.html.twig" %}
+    <h1>Modifier l'utilisateur</h1>
+
+    {{ include('admin/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_admin_index') }}">retour à la liste</a>
+
+    {{ include('admin/_delete_form.html.twig') }}
+{% endblock %}

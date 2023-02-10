@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+form {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    background-color: #000000;
+    width: 50%;
+}
+
+h1 {
+    color: #5584AC;
+    font-size: 35px;
+    font-weight: bolder;
+    margin-top: 100px;
+}
+
+h2 {
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+label {
+    color: white;
+    font-size: 25px;
+}
+
+.div-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.div-input input {
+    color: white;
+    font-size: 25px;
+    height: 40px;
+    width: 400px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: #000000;
+}
+
+button {
+    color: white;
+    background-color: #5584AC;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.continu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.line {
+    border-top: 1px solid white;
+    width: 110px;
+}
+
+span {
+    color: white;
+    font-size: 20px;
+}
+
+.right-div {
+    display: flex;
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    background-color: #8CC04D;
+}
+
+.right-div img {
+    position: absolute;
+    bottom: 0;  
+}
+
+.right-div p {
+    padding: 150px 150px 0px 150px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* .right-div h3 {
+
+} */

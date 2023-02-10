@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}"/>
+{% endblock %}
+
+
+{% block body %}
+{% include "adrar/_navbar.html.twig" %}
+
+<main>
+    <div class="div-top">
+        <div class="top-left">
+            <h1>Votre métier de demain, à portée de main</h1>
+            <p>Développez de nouvelles compétences dans le domaine de l'informatique et intégrer la formation de votre choix.</p>
+            <div class="top-button">
+                <button class="but1">Démarrer ma candidature</button>
+                <button class="but2">Découvrir les formations</button>
+            </div>           
+        </div>
+        <img class="top-ellipse" src="{{ asset('imgs/ellipse-big.svg') }}" alt="">
+    </div>
+
+    <div class="div-middle">
+
+        <div class="div-ellipse">
+            <img src="{{ asset('imgs/ellipse 1.svg') }}" alt="">
+            <h3>Diplômes certifiants</h3>
+            <p>Nos parcours procurent des titres reconnus par l'État</p>
+        </div>
+        <div class="div-ellipse">
+            <img src="{{ asset('imgs/ellipse 2.svg') }}" alt="">
+            <h3>Mentor</h3>
+            <p>Un expert du secteur vous suit de manière régulière</p>
+        </div>
+        <div class="div-ellipse">
+            <img src="{{ asset('imgs/ellipse 3.svg') }}" alt="">
+            <h3>Remboursé si non embauché</h3>
+            <p>Un expert du secteur vous suit de manière régulière</p>
+        </div>
+
+    </div>
+    <div class="div-end">
+        <h3>Témoignages et sourires</h3>
+        <img class="view-avatar" src="{{ asset('imgs/ellipse 4.svg') }}" alt="">
+        <h3>Austin</h3>
+        <p>"Too easy"</p>
+        <div>
+            <img class="arrows" src="{{ asset('imgs/previous.svg') }}" alt="">
+            <img class="arrows" src="{{ asset('imgs/next.svg') }}" alt="">
+        </div>
+    
+    </div>
+
+</main>
+{% include "adrar/_footer.html.twig" %}
+{% endblock %}

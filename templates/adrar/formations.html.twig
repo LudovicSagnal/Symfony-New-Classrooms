@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formations{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/formation.css') }}"/>
+{% endblock %}
+
+
+{% block body %}
+{% include "adrar/_navbar.html.twig" %}
+
+<main>
+    <h2>Cours</h2>
+    <select name="" id="">
+        <option value="">Langages</option>
+        <option value="">HTML</option>
+        <option value="">CSS</option>
+        <option value="">JavaScript</option>
+        <option value="">PHP</option>
+
+    </select>
+
+{% include "adrar/_card.html.twig" %}
+{% include "adrar/_card.html.twig" %}
+</main>
+{% include "adrar/_footer.html.twig" %}
+{% endblock %}

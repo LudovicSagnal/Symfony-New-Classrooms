@@ -1,0 +1,26 @@
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/nav.css') }}"/>
+{% endblock %}
+
+<nav id="nav">
+    <div class="nav-logo">
+        <img src="{{ asset('imgs/classrooms-logo.svg') }}" />
+        <img class="logo-text" src="{{ asset('imgs/classrooms-text.svg') }}" />
+    </div>
+    <a href="{{ path("app_accueil") }}">Accueil</a>
+    <a href="{{ path("app_formations") }}">Formations</a>
+    <a href="{{ path("app_admin_index") }}">Administration</a>
+    <img id="glass" src="{{ asset('imgs/glass.svg') }}" />
+    {% if app.user %}
+            {% if app.user.image != null %}
+                <img class="user" src="{{asset('uploads/avatar/'~ app.user.image)}}" alt="">
+                <div class="mb-3">
+            {% else %}   
+                <img class="user" src="{{asset('uploads/avatar/user.svg')}}" alt="">
+            {% endif %}
+            <span>{{ app.user.firstName }} {{ app.user.lastName }} </span> <a class="deco" href="{{ path('app_logout') }}">Se déconnecter</a>
+            </div>
+    {% else %}
+            <button>Se connecter</button>
+    {% endif %}
+</nav>
