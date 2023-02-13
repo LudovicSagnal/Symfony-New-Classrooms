@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CoursRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -34,6 +36,14 @@ class Cours
 
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $cours_created = null;
+
+    #[ORM\OneToMany(mappedBy: 'cours', targetEntity: Chapitre::class, orphanRemoval: true)]
+    private Collection $chapitres;
+
+    public function __construct()
+    {
+        $this->chapitres = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -120,6 +130,36 @@ class Cours
     public function setCoursCreated(int $cours_created): self
     {
         $this->cours_created = $cours_created;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Chapitre>
+     */
+    public function getChapitres(): Collection
+    {
+        return $this->chapitres;
+    }
+
+    public function addChapitre(Chapitre $chapitre): self
+    {
+        if (!$this->chapitres->contains($chapitre)) {
+            $this->chapitres->add($chapitre);
+            $chapitre->setCours($this);
+        }
+
+        return $this;
+    }
+
+    public function removeChapitre(Chapitre $chapitre): self
+    {
+        if ($this->chapitres->removeElement($chapitre)) {
+            // set the owning side to null (unless already changed)
+            if ($chapitre->getCours() === $this) {
+                $chapitre->setCours(null);
+            }
+        }
 
         return $this;
     }

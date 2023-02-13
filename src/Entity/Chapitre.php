@@ -25,7 +25,7 @@ class Chapitre
 
     #[ORM\ManyToOne(inversedBy: 'chapitres')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $cours = null;
+    private ?Cours $cours = null;
 
     public function getId(): ?int
     {
@@ -68,12 +68,12 @@ class Chapitre
         return $this;
     }
 
-    public function getCours(): ?User
+    public function getCours(): ?Cours
     {
         return $this->cours;
     }
 
-    public function setCours(?User $cours): self
+    public function setCours(?Cours $cours): self
     {
         $this->cours = $cours;
 

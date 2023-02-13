@@ -6,6 +6,7 @@ use App\Entity\Chapitre;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ChapitreType extends AbstractType
 {
@@ -15,7 +16,13 @@ class ChapitreType extends AbstractType
             ->add('chapitre_title')
             ->add('chapitre_content')
             ->add('chapitre_position')
-            ->add('cours')
+            ->add('cours', 
+      EntityType::class, 
+      array('class' => 'App\Entity\Cours',
+            'choice_label' => 'cours_title', 
+            'placeholder' => 'Choisissez le cours')
+)
+
         ;
     }
 

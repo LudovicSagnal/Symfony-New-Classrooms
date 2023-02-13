@@ -7,7 +7,6 @@
 
 
 {% block body %}
-{% include "adrar/_navbar.html.twig" %}
 
 <main>
     <div class="div-top">
@@ -16,7 +15,7 @@
             <p>Développez de nouvelles compétences dans le domaine de l'informatique et intégrer la formation de votre choix.</p>
             <div class="top-button">
                 <button class="but1">Démarrer ma candidature</button>
-                <button class="but2">Découvrir les formations</button>
+                <a href="{{ path("app_formations") }}"><button class="but2">Découvrir les formations</button></a>
             </div>           
         </div>
         <img class="top-ellipse" src="{{ asset('imgs/ellipse-big.svg') }}" alt="">
@@ -54,5 +53,4 @@
     </div>
 
 </main>
-{% include "adrar/_footer.html.twig" %}
 {% endblock %}

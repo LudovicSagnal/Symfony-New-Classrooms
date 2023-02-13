@@ -1,18 +1,66 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello CoursController!{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/cours.css') }}"/>
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-{% include "adrar/_navbar.html.twig" %}
 
-<h1>Héhé</h1>
-
-<div class="example-wrapper">
-
+<div class="head">
+    <div class="left-side">
+        <h2>{{ cour.coursTitle }}</h2>
+        <div class="level">
+            <img src="{{ asset('imgs/clock.svg') }}" alt="">
+            <span>{{ cour.coursDuration }} heures</span>
+            <img src="{{ asset('imgs/level.svg') }}" alt="">
+            <span>Niveau {{ cour.coursLevel }}</span>
+        </div>
+    </div>
+    <div class="right-side">
+        <img src="{{ asset('imgs/pdf.svg') }}" alt="">
+        <span> {{ cour.coursCreated }} </span>
+    </div>
 </div>
-{% include "adrar/_footer.html.twig" %}
+
+<main>
+    
+    <div class="progress">
+        <span class="dot"><img src="{{ asset('imgs/house.svg') }}" alt="" class="inside-dot"></span>
+        <div class="rectangle-line">
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+        </div>
+        <div class="rectangle-line">
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+        </div>
+        <div class="rectangle-line">
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+        </div>              
+        <span class="dot"><img src="{{ asset('imgs/certificate.svg') }}" alt="" class="inside-dot"></span>
+    </div>
+    <pre>
+        {{ dump(chapitre) }}
+    </pre>
+
+    {# <h2>{{ chapitre.chapitreTitle }}</h2> #}
+
+
+</main>
+
+                {# <td>{{ chapitre.chapitreContent }}</td>
+                <td>{{ chapitre.chapitrePosition }}</td> #}
+    
+</div>
+
 {% endblock %}

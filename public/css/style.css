@@ -101,3 +101,7 @@ span {
 /* .right-div h3 {
 
 } */
+
+a:hover {
+    cursor: pointer;
+}

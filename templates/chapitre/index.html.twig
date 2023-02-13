@@ -1,18 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Chapitre index{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/crud.css') }}"/>
+{% endblock %}
 
 {% block body %}
-    <h1>Chapitre index</h1>
+    <h1>Liste des chapitres</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Chapitre_title</th>
-                <th>Chapitre_content</th>
-                <th>Chapitre_position</th>
-                <th>actions</th>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Position</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,17 +26,19 @@
                 <td>{{ chapitre.chapitreContent }}</td>
                 <td>{{ chapitre.chapitrePosition }}</td>
                 <td>
-                    <a href="{{ path('app_chapitre_show', {'id': chapitre.id}) }}">show</a>
-                    <a href="{{ path('app_chapitre_edit', {'id': chapitre.id}) }}">edit</a>
+                    <a href="{{ path('app_chapitre_show', {'id': chapitre.id}) }}">voir</a>
+                    <a href="{{ path('app_chapitre_edit', {'id': chapitre.id}) }}">modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">aucun résultat</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_chapitre_new') }}">Create new</a>
+    <a href="{{ path('app_chapitre_new') }}">Créer nouveau chapitre</a>
+    <br>
+    <a href="{{ path('app_admin_index') }}">Retour à la page admin</a>
 {% endblock %}

@@ -3,11 +3,11 @@
 {% block title %}Formations{% endblock %}
 {% block css %}
     <link rel="stylesheet" href="{{ asset('css/formation.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/card.css') }}"/>
 {% endblock %}
 
 
 {% block body %}
-{% include "adrar/_navbar.html.twig" %}
 
 <main>
     <h2>Cours</h2>
@@ -17,11 +17,27 @@
         <option value="">CSS</option>
         <option value="">JavaScript</option>
         <option value="">PHP</option>
-
     </select>
 
-{% include "adrar/_card.html.twig" %}
-{% include "adrar/_card.html.twig" %}
+    <tbody>
+    {% for cour in cours %}
+        <section class="card">
+            <div class="card-left">
+                <img src="{{ asset('imgs/' ~ cour.coursImage) }}" alt="">
+            </div>
+            <div class="card-right">
+            <a href="{{ path("app_cours") }}"><h4>Cours</h4></a>               
+                <h3>{{ cour.coursTitle }}</h3>
+                <div class="level">
+                    <img src="{{ asset('imgs/level.svg') }}" alt="">
+                    <h5>Niveau : {{ cour.coursLevel }}</h5>
+                    <img src="{{ asset('imgs/clock.svg') }}" alt="">
+                    <h5>{{ cour.coursDuration }} heures</h5>
+                </div>
+                <p>{{ cour.coursSynopsis }}</p>
+            </div>
+        </section>
+    {% endfor %}
+    </tbody>
 </main>
-{% include "adrar/_footer.html.twig" %}
 {% endblock %}

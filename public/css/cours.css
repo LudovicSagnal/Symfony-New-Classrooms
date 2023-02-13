@@ -1,0 +1,53 @@
+.head {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #5584AC80;
+    height: 180px;
+}
+
+.level {
+    display: flex;
+    gap: 20px;
+}
+
+.right-side img {
+    height: 60px;
+}
+
+.progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    background-color: #828282;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.inside-dot {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.rectangle-line {
+    display: flex;
+    flex-direction: row;
+}
+
+.rectangle {
+    height: 20px;
+    width: 50px;
+    background-color: #D9D9D9;
+    border: 1px solid black;
+    box-shadow: 0px 2px 2px 2px gray;
+}

@@ -7,8 +7,7 @@
 {% endblock %}
 
 {% block body %}
-{% include "adrar/_navbar.html.twig" %}
-    <h1>Utilisateur index</h1>
+    <h2>Liste des utilisateurs</h2>
 
     <table class="table">
         <thead>
@@ -47,6 +46,9 @@
     </table>
 
     <a href="{{ path('app_admin_new') }}">Créer un nouvel utilisateur</a>
+
+    <a href="{{ path("app_cours_admin_index") }}"><h2>Cours</h2></a> 
+    <a href="{{ path("app_chapitre_index") }}"><h2>Chapitres</h2></a> 
     {# {% include "cours_admin/index.html.twig" %} #}
     {# {% include "adrar/_footer.html.twig" %} #}
 {% endblock %}

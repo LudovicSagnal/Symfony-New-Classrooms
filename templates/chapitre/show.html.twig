@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Chapitre{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/crud.css') }}"/>
+{% endblock %}
 
 {% block body %}
     <h1>Chapitre</h1>
@@ -12,23 +15,23 @@
                 <td>{{ chapitre.id }}</td>
             </tr>
             <tr>
-                <th>Chapitre_title</th>
+                <th>Titre</th>
                 <td>{{ chapitre.chapitreTitle }}</td>
             </tr>
             <tr>
-                <th>Chapitre_content</th>
+                <th>Contenu</th>
                 <td>{{ chapitre.chapitreContent }}</td>
             </tr>
             <tr>
-                <th>Chapitre_position</th>
+                <th>Position</th>
                 <td>{{ chapitre.chapitrePosition }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_chapitre_index') }}">back to list</a>
+    <a href="{{ path('app_chapitre_index') }}">retour à la liste</a>
 
-    <a href="{{ path('app_chapitre_edit', {'id': chapitre.id}) }}">edit</a>
+    <a href="{{ path('app_chapitre_edit', {'id': chapitre.id}) }}">modifier</a>
 
     {{ include('chapitre/_delete_form.html.twig') }}
 {% endblock %}

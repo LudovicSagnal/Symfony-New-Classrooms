@@ -12,6 +12,10 @@ section {
     margin: 10px;
 }
 
+.card-left img {
+    height: 280px;
+}
+
 .card-right {
     display: flex;
     flex-direction: column;
@@ -22,9 +26,22 @@ section {
 
 .level {
     display: flex;
-    gap: 15px;
+    gap: 20px;
+}
+
+.level img {
+    height: 40px;
 }
 
 h4 {
     color: #5584AC;
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 15px;
+}
+
+p {
+    font-size: 20px;
 }

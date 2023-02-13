@@ -5,6 +5,9 @@ namespace App\Controller;
 use App\Entity\Chapitre;
 use App\Form\ChapitreType;
 use App\Repository\ChapitreRepository;
+use App\Entity\Cours;
+use App\Form\CoursType;
+use App\Repository\CoursRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -35,7 +38,7 @@ class ChapitreController extends AbstractController
         }
 
         return $this->renderForm('chapitre/new.html.twig', [
-            'chapitre' => $chapitre,
+            'chapitres' => $chapitre,
             'form' => $form,
         ]);
     }
@@ -44,7 +47,7 @@ class ChapitreController extends AbstractController
     public function show(Chapitre $chapitre): Response
     {
         return $this->render('chapitre/show.html.twig', [
-            'chapitre' => $chapitre,
+            'chapitres' => $chapitre,
         ]);
     }
 
@@ -61,7 +64,7 @@ class ChapitreController extends AbstractController
         }
 
         return $this->renderForm('chapitre/edit.html.twig', [
-            'chapitre' => $chapitre,
+            'chapitres' => $chapitre,
             'form' => $form,
         ]);
     }

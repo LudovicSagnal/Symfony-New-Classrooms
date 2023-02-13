@@ -39,12 +39,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Avis::class)]
     private Collection $avis;
 
-    #[ORM\OneToMany(mappedBy: 'cours', targetEntity: Chapitre::class)]
-    private Collection $chapitres;
-
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: UserChapitre::class)]
-    private Collection $userChapitres;
-
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
 
@@ -173,36 +167,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($avi->getIdUser() === $this) {
                 $avi->setIdUser(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Chapitre>
-     */
-    public function getChapitres(): Collection
-    {
-        return $this->chapitres;
-    }
-
-    public function addChapitre(Chapitre $chapitre): self
-    {
-        if (!$this->chapitres->contains($chapitre)) {
-            $this->chapitres->add($chapitre);
-            $chapitre->setCours($this);
-        }
-
-        return $this;
-    }
-
-    public function removeChapitre(Chapitre $chapitre): self
-    {
-        if ($this->chapitres->removeElement($chapitre)) {
-            // set the owning side to null (unless already changed)
-            if ($chapitre->getCours() === $this) {
-                $chapitre->setCours(null);
             }
         }
 
